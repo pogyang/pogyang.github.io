@@ -1,0 +1,597 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>git实用教程 | PogHub</title><meta name="author" content="pogyang"><meta name="copyright" content="pogyang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="安装Gitwindows用的比较多，就装windows里吧😀 步骤相对简单，直接官网下一个就ok，在桌面右键-&gt;Git Bash Here就能打开Git的命令窗口  配置Git这个是全局配置Git的用户名和邮箱，在你git commit的时候会用到(全局的配置文件在用户目录下的.gitconfig) git config --global user.name &quot;your name">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git实用教程">
+<meta property="og:url" content="http://www.poghub.cf/2020/10/14/backend/git/git%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="PogHub">
+<meta property="og:description" content="安装Gitwindows用的比较多，就装windows里吧😀 步骤相对简单，直接官网下一个就ok，在桌面右键-&gt;Git Bash Here就能打开Git的命令窗口  配置Git这个是全局配置Git的用户名和邮箱，在你git commit的时候会用到(全局的配置文件在用户目录下的.gitconfig) git config --global user.name &quot;your name">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pogyang.oss-cn-shanghai.aliyuncs.com/cover/git.jpg">
+<meta property="article:published_time" content="2020-10-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-21T13:05:26.265Z">
+<meta property="article:author" content="pogyang">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pogyang.oss-cn-shanghai.aliyuncs.com/cover/git.jpg"><link rel="shortcut icon" href="https://pogyang.oss-cn-shanghai.aliyuncs.com/site/logo.png"><link rel="canonical" href="http://www.poghub.cf/2020/10/14/backend/git/git%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"2SE45XNFSN","apiKey":"3de56469c103c4788d72c057296e8b2f","indexName":"poghub","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#4cbb88","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'git实用教程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-21 21:05:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/assets/css/custom.css" media="defer" onload="this.media='all'"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="PogHub" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/assets/css/pace.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/site/avatar.jpg" onerror="onerror=null;src='/assets/img/flink.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-archive"></i><span> 文库</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/page/link/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></li><li><a class="site-page child" href="/page/music/"><i class="fa-fw fas fa-compact-disc"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/page/message/"><i class="fa-fw fas fa-comment"></i><span> 留言</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pogyang.oss-cn-shanghai.aliyuncs.com/cover/git.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="PogHub"><img class="site-icon" src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/site/logo.png"/><span class="site-name">PogHub</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-archive"></i><span> 文库</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/page/link/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></li><li><a class="site-page child" href="/page/music/"><i class="fa-fw fas fa-compact-disc"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/page/message/"><i class="fa-fw fas fa-comment"></i><span> 留言</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">git实用教程<a class="post-edit-link" href="https://github.com/pogyang/poghub/edit/main/source/_posts/backend/git/git实用教程.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2020-10-13T16:00:00.000Z" title="发表于 2020-10-14 00:00:00">2020-10-14</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4k</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="git实用教程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>windows用的比较多，就装windows里吧😀</p>
+<p>步骤相对简单，直接官网下一个就ok，在桌面右键-&gt;Git Bash Here就能打开Git的命令窗口</p>
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201014145017000.gif" alt="image-20201014145017000"></p>
+<h2 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h2><p>这个是全局配置Git的用户名和邮箱，在你git commit的时候会用到(全局的配置文件在用户目录下的.gitconfig)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;your email&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 格式化git log并简写为git lg</span></span><br><span class="line">git config --global alias.lg <span class="string">&quot;log --color --graph --pretty=format:&#x27;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#x27; --abbrev-commit&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>或者你想在指定的本地Git仓库内修改自己的信息，可以使用如下命令，这个的优先级是比global高的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --<span class="built_in">local</span> user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">git config --<span class="built_in">local</span> user.email <span class="string">&quot;your email&quot;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Github的提交记录列表中没有显示你设置的头像的原因就是你设置的邮箱和远程的邮箱不一致</p>
+</blockquote>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>桌面打开git bash后</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建空的Git仓库文件夹</span></span><br><span class="line"><span class="built_in">mkdir</span> test-git</span><br><span class="line"><span class="comment"># 进入文件夹</span></span><br><span class="line"><span class="built_in">cd</span> test-git</span><br><span class="line"><span class="comment"># 查看当前所在目录(print work directory)</span></span><br><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
+<p>前置工作完成后就可以初始化Git仓库了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在test-git中生成了一个.git隐藏文件夹，用来记录和Git相关的信息，不要随意动他</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 创建一个文件</span></span><br><span class="line"><span class="built_in">touch</span> readme.md</span><br><span class="line"><span class="comment"># 用vim命令编辑markdown文件中的内容，不会编辑的自行百度</span></span><br><span class="line">vim readme.md</span><br><span class="line"><span class="comment"># 查看readme.md的内容 =&gt; hello</span></span><br><span class="line"><span class="built_in">cat</span> readme.md</span><br><span class="line"><span class="comment"># 查看工作树状态(包含未追踪的文件，待暂存和待提交的文件)</span></span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>此时发现新建的readme.md没有被追踪</p>
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201014151443166.jpg" alt="image-20201014151443166"></p>
+<p>提示需要将readme.md添加到暂存区内</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加工作目录下的所有文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 或者这里我们指定文件</span></span><br><span class="line">git add readme.md</span><br></pre></td></tr></table></figure>
+
+<p>此时发现文件的状态变成了待提交</p>
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201014153334632.jpg" alt="image-20201014153334632"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 提交到本地库 -m 表示本次提交的提示</span></span><br><span class="line"><span class="comment"># git add和git commit的区别是git add可以单独添加某一个文件，而git commit是批量操作的</span></span><br><span class="line">git commit -m <span class="string">&quot;create readme.md&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><p>紧接着上下文，我们如何查看本地库提交的版本呢❓</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看commit版本，这里是以简洁的形式呈现的，相关配置可参考官网</span></span><br><span class="line">git <span class="built_in">log</span> --pretty=oneline</span><br></pre></td></tr></table></figure>
+
+<p>结果如下，其中这一长串的16进制是通过SHA1算法整出来的，你操作的时候可能和我不太一样</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a6ea3b5f337d46bc993e06a39ddc967777e11566 (HEAD -&gt; master) create readme.md</span><br></pre></td></tr></table></figure>
+
+<p>此时我们修改readme.md的内容为helloworld</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 和版本库比较，可以指定具体文件</span></span><br><span class="line">git diff</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">diff --git a/readme.md b/readme.md</span><br><span class="line">index ce01362..31e0fce 100644</span><br><span class="line">--- a/readme.md</span><br><span class="line">+++ b/readme.md</span><br><span class="line">@@ -1 +1 @@</span><br><span class="line">-hello</span><br><span class="line">+helloworld</span><br></pre></td></tr></table></figure>
+
+<p>把修改的内容提交到版本库中，生成了一条新的commit id，此时我们发现原先的HEAD指针指向了新的commit id</p>
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201014160435693.jpg" alt="image-20201014160435693"></p>
+<p>重点来了，如何版本回退呢？</p>
+<p>我们可以使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># --hard稍后介绍，HEAD^表示上一个commit id，HEAD^^表示再前一个，HEAD~100表示之前的第100个版本</span></span><br><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+
+<p>强迫症又犯了，我又想回去了…怎么办呢？</p>
+<p>其实很简单，你只要记得那个commit id就能回去，有人会问commit id那么长谁记得住，没问题</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># HEAD引用记录解君愁</span></span><br><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a6ea3b5 (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to HEAD^</span><br><span class="line">4dfae54 HEAD@&#123;1&#125;: commit: update readme.md</span><br><span class="line">a6ea3b5 (HEAD -&gt; master) HEAD@&#123;2&#125;: commit (initial): create readme.md</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 此时我们又可以回到update readme.md的版本</span></span><br><span class="line">git reset --hard 4dfae54</span><br></pre></td></tr></table></figure>
+
+<h2 id="几个概念"><a href="#几个概念" class="headerlink" title="几个概念"></a>几个概念</h2><p>Git作为先进的分布式版本控制系统，与SVN、CVS等比较，他的特点在于每个开发者在本地都有自己的版本库，协作时只需要将自己修改的信息发送给别人即可，引入Git服务器只是起一个中间交换的作用，而集中式版本控制系统都是由中央库去管理的，一旦中央库故障，GG  </p>
+<p>工作区(workspace)：就是你的本地目录</p>
+<p>版本库(Local Repository)：可分为stage&#x2F;index暂存区和分支(默认创建master)</p>
+<p>画图理解如下</p>
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201014173943169.jpg" alt="image-20201014173943169"></p>
+<h2 id="修改和删除"><a href="#修改和删除" class="headerlink" title="修改和删除"></a>修改和删除</h2><p>Git是面向修改记录的，而不是文件跟踪</p>
+<p>首先我们来新增一个update.md修改内容为update，并添加到暂存区中，添加到暂存区中的update.md变为待提交状态，此时我们修改工作区的update.md文件，然后查看版本库状态，发现</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span><br><span class="line">        new file:   update.md</span><br><span class="line"></span><br><span class="line">Changes not staged for commit:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line">        modified:   update.md</span><br></pre></td></tr></table></figure>
+
+<p>一个是待提交，一个是未被添加到暂存区中，git commit会提交什么呢？</p>
+<p>结果只是提交了添加到暂存区的update.md，此时我们再次查看版本库状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes not staged for commit:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line">        modified:   update.md</span><br><span class="line"></span><br><span class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>如果我们想要丢弃这个工作区的修改，可以使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注意和git checkout(切换分支)的区别</span></span><br><span class="line">git checkout -- update.md</span><br><span class="line"><span class="comment"># 这条命令的含义就是从版本库中检出update.md这个文件最新状态，并替换工作区文件的内容</span></span><br></pre></td></tr></table></figure>
+
+<p>检出有两种可能性，这里是工作区的update.md被二次修改了，第一次修改的update.md被commit了，暂存区是干净的状态，然后检出是从版本库里拿出来替换工作区的update.md，另一种情况就是如果第一次修改update.md被添加到暂存区后没有被commit，而且第二次修改了update.md没有被添加至暂存区，那么检出就是用暂存区中第一次修改的update.md来替换工作区中第二次修改的update.md</p>
+<p>总的来说，检出就是从最新一次的git add或者git commit来替换工作区的内容</p>
+<p>针对第二种情况，即使我们把工作区的内容替换了，但暂存区还是存在内容的，如果我们想取消暂存区的修改，该怎么处理呢？</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使暂存区中的修改撤销到工作区中，使文件从待提交状态变为待暂存</span></span><br><span class="line">git reset HEAD update.md</span><br><span class="line"><span class="comment"># 此时结合检出就能还原文件在版本库中的最后一次状态</span></span><br></pre></td></tr></table></figure>
+
+<p>删除就相对简单了，假如你在工作区删除了一个文件，如果你想先add在commit，那么版本库里也会被删除，如果add了没commit且需要还原文件，先reset再检出，如果没add且需要还原，直接检出就能防止误删，但是会丢失最近一次提交后的修改</p>
+<p>需要注意的是，版本库中如果没有你的文件，在工作区删除是无法还原的</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p>本地的内容相信大家已经看了个大概，这里再来讲讲远程分支的细节</p>
+<p>当需要多人协作时，远程分支就比较管用</p>
+<p>首先，推送远程分支我们需要一个Git服务器，国内有很多代码托管平台，诸如Github、Gitee、Coding…等等</p>
+<p>就拿最广泛的Github举例，首先注册一个账号就可以开始免费使用Github了(白嫖使我快乐)，为了使我们的主机能够与Git服务器关联，首先我们需要先配置SSH，在你本机的用户目录下找到是否有.ssh文件夹，如果没有使用命令<code>ssh-keygen -t rsa -C &quot;your email&quot;</code>，生成的目录结构如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.ssh</span><br><span class="line"> - id_rsa</span><br><span class="line"> - id_rsa.pub</span><br><span class="line"> - known_hosts</span><br></pre></td></tr></table></figure>
+
+<p>在Github设置你的SSH：Settings-&gt;SSH and GPG keys-&gt;New SSH key-&gt;标题随意，Key填id_rsa.pub的内容</p>
+<p>ok，回到我们的Repositories页面，新建一个仓库test-git，先不用初始化，建个空仓库，然后我们发现远程仓库的地址有两种形式，https和ssh协议，个人建议使用ssh的快一点，有的公司限制只能用https的</p>
+<p>我们在本地中已经建立我们的库，我们只需要推送到远程仓库即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加远程仓库地址，指定别名为origin</span></span><br><span class="line">git remote add origin git@github.com:pogyang/test-git.git</span><br><span class="line"><span class="comment"># 显示配置的远程仓库地址</span></span><br><span class="line">git remote -v</span><br><span class="line"><span class="comment"># 推送(Github的新feature把默认分支改名为main，不过不影响我们使用master)</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>看到网上有很多关于说法，这里的-u有什么作用，以及和–set-upstream-to的区别，在我的理解看来-u参数的含义是将本地的提交全部推送到远程的master分支中，如果远程master不存在就创建，下次就可以随意拉取和推送了(当远程就这一个分支的时候可以直接使用git pull和git push)</p>
+<p>在.git的config中生成的内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[branch &quot;master&quot;]</span><br><span class="line">	remote = origin</span><br><span class="line">	merge = refs/heads/master</span><br></pre></td></tr></table></figure>
+
+<p>如果我们不使用-u参数呢？</p>
+<p>用git push origin master貌似能成功推送，但是下次git push或者git pull的时候提示让你绑定远程分支，所以说-u是一次性到位的，而–set-upstream-to只是设定了绑定的分支</p>
+<p>另一种方法就是clone，直接把远程库克隆到本地<code>git clone git@github.com:pogyang/test-git.git</code>，远程建库的时候可以预先用README.md初始化</p>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>还记得之前<code>git checkout -- &lt;filename&gt;</code>命令吗，那个是标识从版本库中检出的，我们这里的<code>git checkout</code>是表示切换分支的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建并切换分支</span></span><br><span class="line">git checkout -b slave</span><br><span class="line"><span class="comment"># 或者使用switch，语义更清晰</span></span><br><span class="line">git switch -c slave</span><br><span class="line"><span class="comment"># 查看分支，当前分支前面有个*</span></span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>画图理解如下</p>
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201015115105938.jpg" alt="image-20201015115105938"></p>
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201015115145142.jpg" alt="image-20201015115145142"></p>
+<p>然后在slave分支提交</p>
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201015115211131.jpg" alt="image-20201015115211131"></p>
+<p>master如果想要合并slave分支，那么很简单</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 先切换到master分支</span></span><br><span class="line">git swtich master</span><br><span class="line"><span class="comment"># 合并slave，这里是使用的是Fast-forward模式，就是将原来的master指向slave最新的提交，速度很快在这里不存在冲突</span></span><br><span class="line">git merge slave</span><br></pre></td></tr></table></figure>
+
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201015115254601.jpg" alt="image-20201015115254601"></p>
+<p>然后用<code>git branch -d slave</code>删除slave分支，如果你没有完全合并slave分支会提示-D删除</p>
+<p>并不是所有的分支管理都这么简单，假如master在merge前提交了自己的分支，那么就可能存在冲突</p>
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201015135517985.jpg" alt="image-20201015135517985"></p>
+<p>此时在master分支上，尝试用<code>git merge slave</code>的时候会出现</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git merge slave</span><br><span class="line">Auto-merging conflict.md</span><br><span class="line">CONFLICT (content): Merge conflict in conflict.md</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br></pre></td></tr></table></figure>
+
+<p>且你会发现你的分支名变成了master|MERGING，提示你要手动合并冲突的文件，用git status有相应的提示</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">You have unmerged paths.</span><br><span class="line">  (fix conflicts and run &quot;git commit&quot;)</span><br><span class="line">  (use &quot;git merge --abort&quot; to abort the merge)</span><br><span class="line"></span><br><span class="line">Unmerged paths:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)</span><br><span class="line">        both modified:   conflict.md</span><br><span class="line"></span><br><span class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>这里提示还可以使用<code>git merge --abort</code>来取消此次merge</p>
+<p>我们来手动处理下冲突的文件conflict.md</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">master branch</span><br><span class="line">=======</span><br><span class="line">slave branch</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; slave</span><br></pre></td></tr></table></figure>
+
+<p>可以发现当前的分支内容master branch和slave分支的slave branch冲突了，Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;、&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;、&gt;&gt;&gt;&gt;&gt;&gt;&gt;来分割冲突，我们处理后的结果如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">merge branch</span><br></pre></td></tr></table></figure>
+
+<p>然后add再commit发现分支名又还原为master</p>
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201015135612337.jpg" alt="image-20201015135612337"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看下分支合并图(参数含义以次是图形形式，简洁形式，commit id缩写形式)</span></span><br><span class="line">git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*   3df978a (HEAD -&gt; master) resolve conflict</span><br><span class="line">|\</span><br><span class="line">| * 8b7732d (slave) slave commit</span><br><span class="line">* | a3c6977 master commit</span><br><span class="line">|/</span><br><span class="line">* 311e848 create conflict.md</span><br></pre></td></tr></table></figure>
+
+<p>然后删除slave分支<code>git branch -d slave</code></p>
+<h2 id="实战分支管理"><a href="#实战分支管理" class="headerlink" title="实战分支管理"></a>实战分支管理</h2><p>前面我们提到的Fast-forward模式合并，虽然他速度很快(其实就是指针的移动)，但会丢失合并其他分支的记录</p>
+<p>这里给出一个demo，我们先在master提交一个ff.md文件，创建并切换到dev分支修改提交ff.md</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git log --graph --pretty=oneline --abbrev-commit</span><br><span class="line">* 2a5a03a (HEAD -&gt; dev, master) dev update</span><br><span class="line">* 00a12b8 dev start</span><br><span class="line">* f9a000a (master) step two</span><br><span class="line">* 105c38e step one</span><br><span class="line">* 31220ac create ff.md</span><br></pre></td></tr></table></figure>
+
+<p>切回master去合并</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git log --graph --pretty=oneline --abbrev-commit</span><br><span class="line">* 2a5a03a (HEAD -&gt; master, dev) dev update</span><br><span class="line">* 00a12b8 dev start</span><br><span class="line">* f9a000a step two</span><br><span class="line">* 105c38e step one</span><br><span class="line">* 31220ac create ff.md</span><br></pre></td></tr></table></figure>
+
+<p>发现分支分叉的信息丢失了，因为这里没有冲突默认采用的是Fast-forward模式，如果我们不想这么干，怎么做呢？</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 采用普通模式的合并</span></span><br><span class="line">git merge --no-ff -m <span class="string">&#x27;no-ff mode&#x27;</span> dev</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git log --graph --pretty=oneline --abbrev-commit</span><br><span class="line">*   b8b9e62 (HEAD -&gt; master) no-ff mode</span><br><span class="line">|\</span><br><span class="line">| * 2a5a03a (dev) dev update</span><br><span class="line">| * 00a12b8 dev start</span><br><span class="line">|/</span><br><span class="line">* f9a000a step two</span><br><span class="line">* 105c38e step one</span><br><span class="line">* 31220ac create ff.md</span><br></pre></td></tr></table></figure>
+
+<p>画个图理解下</p>
+<p><img src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/blog/image-20201015151921051.jpg" alt="image-20201015151921051"></p>
+<p>实际开发中，master分支一般都是很稳定的，通常用来发布版本使用，dev用作开发分支，我们多人协作开发使就需要先合并到dev分支上，最后由master分支来合并dev分支发布</p>
+<p>有的时候比如线上的master分支中可能存在bug，需要bug-fix热修复，但你在dev的分支中开发到一半还没完全完成，怎么办呢？</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 相当于保存一个dev分支下的快照然后入栈，以备后续继续开发</span></span><br><span class="line">git stash</span><br><span class="line"><span class="comment"># 查看stash的内容</span></span><br><span class="line">git stash list</span><br><span class="line"><span class="comment"># 取指定快照但不会删除，需要用git stash drop删除</span></span><br><span class="line">git stash apply stash@&#123;0&#125;</span><br><span class="line"><span class="comment"># 从栈顶取快照并删除</span></span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
+
+<p>所以这里相当于是将我们修改的dev保存一个快照到stash使工作树清空，然后切换到master分支上去修复bug</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 确定修复master分支上的bug，先切过去</span></span><br><span class="line">git checkout master</span><br><span class="line"><span class="comment"># 创建bug-001分支，处理bug然后提交</span></span><br><span class="line">git switch -c bug-001</span><br><span class="line"><span class="comment"># 切回master合并</span></span><br><span class="line">git merge --no-ff -m <span class="string">&#x27;fix-bug-001&#x27;</span> bug-001</span><br><span class="line"><span class="comment"># 删除bug-001分支</span></span><br><span class="line">git branch -d bug-001</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git log --graph --pretty=oneline --abbrev-commit</span><br><span class="line">*   9bf5718 (HEAD -&gt; master) fix-bug-001</span><br><span class="line">|\</span><br><span class="line">| * 9836de4 bug-001-fix</span><br><span class="line">|/</span><br><span class="line">*   b8b9e62 no-ff mode</span><br><span class="line">|\</span><br><span class="line">| * 2a5a03a (dev) dev update</span><br><span class="line">| * 00a12b8 dev start</span><br><span class="line">|/</span><br><span class="line">* f9a000a step two</span><br><span class="line">* 105c38e step one</span><br><span class="line">* 31220ac create ff.md</span><br></pre></td></tr></table></figure>
+
+<p>ok，热修完成切回dev分支继续工作，但是我们发现master分支上bug的确是被修复了，但是这个bug在dev分支上还是存在的，难道要重复劳动？</p>
+<p>Git已经帮我们解决了这个问题</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 需要指定修复bug的commit id</span></span><br><span class="line">git cherry-pick 9836de4</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git cherry-pick 9836de4</span><br><span class="line">[dev 803fcd1] bug-001-fix</span><br><span class="line"> Date: Thu Oct 15 16:26:51 2020 +0800</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 bug-fix.md</span><br></pre></td></tr></table></figure>
+
+<p>这样Git就会将修复的bug复制过来并在dev上生成一个新的commit id -&gt; 803fcd1，再次从master上合并dev</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git log --graph --pretty=oneline --abbrev-commit</span><br><span class="line">*   80e9f6d (HEAD -&gt; master) merge dev again</span><br><span class="line">|\</span><br><span class="line">| * 803fcd1 (dev) bug-001-fix</span><br><span class="line">* |   9bf5718 fix-bug-001</span><br><span class="line">|\ \</span><br><span class="line">| * | 9836de4 bug-001-fix</span><br><span class="line">|/ /</span><br><span class="line">* | b8b9e62 no-ff mode</span><br><span class="line">|\|</span><br><span class="line">| * 4222a99 dev update</span><br><span class="line">| * daebb20 dev start</span><br><span class="line">|/</span><br><span class="line">* 422bba2 step two</span><br><span class="line">* 3051c54 step one</span><br><span class="line">* ae24ade create ff.md</span><br></pre></td></tr></table></figure>
+
+<p>有的时候我们在项目中要开发实验性的功能，可以新建一个feature分支，如果需要该功能就合并，如果不需要就删除，还是比较灵活的，注意没有被完全合并的分支-d参数是删除不了的，要用-D参数强制删除</p>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><p>这个就相对简单了，有点类似分支主要用于显示项目版本号</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到需要打tag的分支，还可以指定对应的commit id(默认为HEAD)</span></span><br><span class="line">git tag &lt;tagname&gt; &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 指定标签信息</span></span><br><span class="line">git tag -a &lt;tagname&gt; -m <span class="string">&quot;msg&quot;</span> &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 展示所有的标签</span></span><br><span class="line">git tag</span><br><span class="line"><span class="comment"># 展示某个标签</span></span><br><span class="line">git show &lt;tagname&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 推送标签到远程</span></span><br><span class="line">git push origin &lt;tagname&gt;</span><br><span class="line"><span class="comment"># 推送所有标签</span></span><br><span class="line">git push origin --tags</span><br><span class="line"><span class="comment"># 删除本地标签</span></span><br><span class="line">git tag -d &lt;tagname&gt;</span><br><span class="line"><span class="comment"># 删除远程标签</span></span><br><span class="line">git push origin :refs/tags/&lt;tagname&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>附上一些其他的小命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改commit的注释</span></span><br><span class="line">git commit --amend</span><br><span class="line"><span class="comment"># 生成ssh</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;pogyang&quot;</span></span><br></pre></td></tr></table></figure>
+
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/git/">git</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://pogyang.oss-cn-shanghai.aliyuncs.com/site/wechat-pay-qrcode.jpg" target="_blank"><img class="post-qr-code-img" src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/site/wechat-pay-qrcode.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://pogyang.oss-cn-shanghai.aliyuncs.com/site/ali-pay-qrcode.jpg" target="_blank"><img class="post-qr-code-img" src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/site/ali-pay-qrcode.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/10/11/common/github/github%E6%8F%90%E9%80%9F%E6%96%B9%E6%A1%88%E5%A4%A7%E5%85%A8/" title="github提速方案大全"><img class="cover" src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/cover/github.jpg" onerror="onerror=null;src='/assets/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">github提速方案大全</div></div></a></div><div class="next-post pull-right"><a href="/2020/10/22/backend/mybatis/mybatis%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/" title="mybatis实用教程"><img class="cover" src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/cover/mybatis.jpg" onerror="onerror=null;src='/assets/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">mybatis实用教程</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Git"><span class="toc-text">安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEGit"><span class="toc-text">配置Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">快速开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="toc-text">版本回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E6%A6%82%E5%BF%B5"><span class="toc-text">几个概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-text">修改和删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%94%AF"><span class="toc-text">分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="toc-text">实战分支管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE"><span class="toc-text">标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-text">补充</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://pogyang.oss-cn-shanghai.aliyuncs.com/cover/git.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'mkKyGQH6SAyxfpiTNp2PSvY2-9Nh9j0Va',
+      appKey: 'zpILy2DJMEXm1wOoKBdQcIpf',
+      avatar: '',
+      serverURLs: 'https://mkkygqh6.lc-cn-e1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon
+    let defaultIcon = ''
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = () => {
+    const serverURL = 'https://mkkygqh6.lc-cn-e1-shared.com'
+
+    var settings = {
+      "method": "GET",
+      "headers": {
+        "X-LC-Id": 'mkKyGQH6SAyxfpiTNp2PSvY2-9Nh9j0Va',
+        "X-LC-Key": 'zpILy2DJMEXm1wOoKBdQcIpf',
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
+      .then(response => response.json())
+      .then(data => {
+        const valineArray = data.results.map(function (e) {
+          return {
+            'avatar': getIcon(e.QQAvatar, e.mail),
+            'content': changeContent(e.comment),
+            'nick': e.nick,
+            'url': e.url + '#' + e.objectId,
+            'date': e.updatedAt,
+          }
+        })
+        saveToLocal.set('valine-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+        generateHtml(valineArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      }) 
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('valine-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script src="https://myhkw.cn/api/player/1645780454147" id="myhk" key="1645780454147" m="1"></script><canvas id="universe"></canvas><script defer src="/assets/js/starrysky-meteor.js"></script><script async src="/js/sun_moon.js"></script><script async src="/assets/js/console.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="/assets/css/custom-aplayer.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2020/10/11/common/github/github提速方案大全/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/cover/github.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2020-10-11</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2020/10/11/common/github/github提速方案大全/&quot;);" href="javascript:void(0);" alt="">github提速方案大全</a><div class="blog-slider__text">经常用的几个</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2020/10/11/common/github/github提速方案大全/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2020/10/01/system/win10/win10小技巧/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/cover/win10.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2020-10-01</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2020/10/01/system/win10/win10小技巧/&quot;);" href="javascript:void(0);" alt="">win10小技巧</a><div class="blog-slider__text">经常用的几个</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2020/10/01/system/win10/win10小技巧/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2020/10/14/backend/git/git实用教程/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "/assets/img/loading.gif" data-lazy-src="https://pogyang.oss-cn-shanghai.aliyuncs.com/cover/git.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2020-10-14</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2020/10/14/backend/git/git实用教程/&quot;);" href="javascript:void(0);" alt="">git实用教程</a><div class="blog-slider__text">经常用的几个</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2020/10/14/backend/git/git实用教程/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1s');
+    arr[i].setAttribute('data-wow-delay', '0s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --></body></html>

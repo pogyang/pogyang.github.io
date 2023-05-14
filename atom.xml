@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>PogHub</title>
+  
+  
+  <link href="http://www.poghub.cf/atom.xml" rel="self"/>
+  
+  <link href="http://www.poghub.cf/"/>
+  <updated>2023-04-01T12:53:56.454Z</updated>
+  <id>http://www.poghub.cf/</id>
+  
+  <author>
+    <name>pogyang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用emoji和颜文字速查</title>
+    <link href="http://www.poghub.cf/2023/01/04/common/emoji/%E5%B8%B8%E7%94%A8emoji%E5%92%8C%E9%A2%9C%E6%96%87%E5%AD%97%E9%80%9F%E6%9F%A5/"/>
+    <id>http://www.poghub.cf/2023/01/04/common/emoji/%E5%B8%B8%E7%94%A8emoji%E5%92%8C%E9%A2%9C%E6%96%87%E5%AD%97%E9%80%9F%E6%9F%A5/</id>
+    <published>2023-01-04T11:42:33.000Z</published>
+    <updated>2023-04-01T12:53:56.454Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;小图标速查&quot;&gt;&lt;a href=&quot;#小图标速查&quot; class=&quot;headerlink&quot; title=&quot;小图标速查&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://emojipedia.org/&quot;&gt;小图标速查&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;颜文字速查&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="emoji" scheme="http://www.poghub.cf/tags/emoji/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>csharp基础</title>
+    <link href="http://www.poghub.cf/2022/04/03/backend/csharp/csharp%E5%9F%BA%E7%A1%80/"/>
+    <id>http://www.poghub.cf/2022/04/03/backend/csharp/csharp%E5%9F%BA%E7%A1%80/</id>
+    <published>2022-04-03T00:35:24.000Z</published>
+    <updated>2022-11-17T13:57:10.086Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;c-的数据类型&quot;&gt;&lt;a href=&quot;#c-的数据类型&quot; class=&quot;headerlink&quot; title=&quot;c#的数据类型&quot;&gt;&lt;/a&gt;c#的数据类型&lt;/h1&gt;&lt;h2 id=&quot;值类型&quot;&gt;&lt;a href=&quot;#值类型&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="csharp" scheme="http://www.poghub.cf/tags/csharp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IO</title>
+    <link href="http://www.poghub.cf/2021/09/26/backend/IO/IO/"/>
+    <id>http://www.poghub.cf/2021/09/26/backend/IO/IO/</id>
+    <published>2021-09-26T10:58:24.000Z</published>
+    <updated>2022-09-28T05:11:34.514Z</updated>
+    
+    
+    
+    
+    
+    <category term="IO" scheme="http://www.poghub.cf/tags/IO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis</title>
+    <link href="http://www.poghub.cf/2021/09/01/backend/redis/redis/"/>
+    <id>http://www.poghub.cf/2021/09/01/backend/redis/redis/</id>
+    <published>2021-09-01T04:40:12.000Z</published>
+    <updated>2022-09-28T05:11:34.536Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;redis的数据结构&quot;&gt;&lt;a href=&quot;#redis的数据结构&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="redis" scheme="http://www.poghub.cf/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm</title>
+    <link href="http://www.poghub.cf/2021/03/09/frontend/node/npm/"/>
+    <id>http://www.poghub.cf/2021/03/09/frontend/node/npm/</id>
+    <published>2021-03-09T10:56:51.000Z</published>
+    <updated>2022-09-28T05:11:34.560Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;npm是内置于node.js中的，首先要装node&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;常见命令&quot;&gt;&lt;a href=&quot;#常见命令&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="node" scheme="http://www.poghub.cf/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos常用命令</title>
+    <link href="http://www.poghub.cf/2021/01/22/system/centos/centos%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://www.poghub.cf/2021/01/22/system/centos/centos%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2021-01-22T02:34:37.000Z</published>
+    <updated>2023-01-14T03:55:58.006Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 查看端口是否被占用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="centos" scheme="http://www.poghub.cf/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MobaXterm</title>
+    <link href="http://www.poghub.cf/2021/01/21/common/tools/MobaXterm/"/>
+    <id>http://www.poghub.cf/2021/01/21/common/tools/MobaXterm/</id>
+    <published>2021-01-21T03:26:25.000Z</published>
+    <updated>2022-09-28T05:11:34.553Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;罗列一些使用时出现的问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;无法上传文件至根目录&quot;&gt;&lt;a href=&quot;#无法上传文件至根目录&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="tools" scheme="http://www.poghub.cf/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos7常用扩展</title>
+    <link href="http://www.poghub.cf/2021/01/18/system/centos/centos%E5%B8%B8%E7%94%A8%E6%89%A9%E5%B1%95/"/>
+    <id>http://www.poghub.cf/2021/01/18/system/centos/centos%E5%B8%B8%E7%94%A8%E6%89%A9%E5%B1%95/</id>
+    <published>2021-01-18T08:28:15.000Z</published>
+    <updated>2022-09-28T05:11:34.588Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装命令&quot;&gt;&lt;a href=&quot;#安装命令&quot; class=&quot;headerlink&quot; title=&quot;安装命令&quot;&gt;&lt;/a&gt;安装命令&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;先切换到root用户&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure</summary>
+        
+      
+    
+    
+    
+    
+    <category term="centos" scheme="http://www.poghub.cf/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker实用教程</title>
+    <link href="http://www.poghub.cf/2021/01/15/backend/docker/docker%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>http://www.poghub.cf/2021/01/15/backend/docker/docker%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</id>
+    <published>2021-01-15T02:45:04.000Z</published>
+    <updated>2023-01-14T08:07:30.476Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;卸载旧版本&quot;&gt;&lt;a href=&quot;#卸载旧版本&quot; class=&quot;headerlink&quot; title=&quot;卸载旧版本&quot;&gt;&lt;/a&gt;卸载旧版本&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+    <category term="docker" scheme="http://www.poghub.cf/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim使用教程</title>
+    <link href="http://www.poghub.cf/2020/12/01/IDE/vim/vim%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>http://www.poghub.cf/2020/12/01/IDE/vim/vim%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</id>
+    <published>2020-12-01T03:15:41.000Z</published>
+    <updated>2022-09-28T05:11:34.511Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;vim 文本编辑的神器&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;基本使用&quot;&gt;&lt;a href=&quot;#基本使用&quot; class=&quot;headerlink&quot; title=&quot;基本使用&quot;&gt;&lt;/a&gt;基本使用&lt;/h2&gt;&lt;figure</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vim" scheme="http://www.poghub.cf/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则小册子</title>
+    <link href="http://www.poghub.cf/2020/11/26/common/regex/%E6%AD%A3%E5%88%99%E5%B0%8F%E5%86%8C%E5%AD%90/"/>
+    <id>http://www.poghub.cf/2020/11/26/common/regex/%E6%AD%A3%E5%88%99%E5%B0%8F%E5%86%8C%E5%AD%90/</id>
+    <published>2020-11-26T02:51:00.000Z</published>
+    <updated>2022-09-28T05:11:34.550Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;正则可以说是一个比较通用的规则，用于匹配指定的内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;基本使用&quot;&gt;&lt;a href=&quot;#基本使用&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="regex" scheme="http://www.poghub.cf/tags/regex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql实用教程</title>
+    <link href="http://www.poghub.cf/2020/10/23/backend/mysql/mysql%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>http://www.poghub.cf/2020/10/23/backend/mysql/mysql%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</id>
+    <published>2020-10-22T16:00:00.000Z</published>
+    <updated>2022-09-28T05:11:34.534Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据库概念&quot;&gt;&lt;a href=&quot;#数据库概念&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="mysql" scheme="http://www.poghub.cf/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mybatis实用教程</title>
+    <link href="http://www.poghub.cf/2020/10/22/backend/mybatis/mybatis%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>http://www.poghub.cf/2020/10/22/backend/mybatis/mybatis%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</id>
+    <published>2020-10-21T16:00:00.000Z</published>
+    <updated>2022-09-28T05:11:34.531Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;对比框架&quot;&gt;&lt;a href=&quot;#对比框架&quot; class=&quot;headerlink&quot; title=&quot;对比框架&quot;&gt;&lt;/a&gt;对比框架&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;&lt;/th&gt;
+&lt;th</summary>
+        
+      
+    
+    
+    
+    
+    <category term="mybatis" scheme="http://www.poghub.cf/tags/mybatis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git实用教程</title>
+    <link href="http://www.poghub.cf/2020/10/14/backend/git/git%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>http://www.poghub.cf/2020/10/14/backend/git/git%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</id>
+    <published>2020-10-13T16:00:00.000Z</published>
+    <updated>2022-11-21T13:05:26.265Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装Git&quot;&gt;&lt;a href=&quot;#安装Git&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="git" scheme="http://www.poghub.cf/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github提速方案大全</title>
+    <link href="http://www.poghub.cf/2020/10/11/common/github/github%E6%8F%90%E9%80%9F%E6%96%B9%E6%A1%88%E5%A4%A7%E5%85%A8/"/>
+    <id>http://www.poghub.cf/2020/10/11/common/github/github%E6%8F%90%E9%80%9F%E6%96%B9%E6%A1%88%E5%A4%A7%E5%85%A8/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2022-11-21T13:04:40.858Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Github镜像&quot;&gt;&lt;a href=&quot;#Github镜像&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="github" scheme="http://www.poghub.cf/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dotnet-cnblog使用教程</title>
+    <link href="http://www.poghub.cf/2020/10/11/common/tools/dotnet-cnblog%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>http://www.poghub.cf/2020/10/11/common/tools/dotnet-cnblog%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2022-09-28T05:11:34.555Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装-Net-Core-SDK&quot;&gt;&lt;a href=&quot;#安装-Net-Core-SDK&quot; class=&quot;headerlink&quot; title=&quot;安装.Net Core SDK&quot;&gt;&lt;/a&gt;安装.Net Core SDK&lt;/h2&gt;&lt;p&gt;下载地址： &lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="tools" scheme="http://www.poghub.cf/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式</title>
+    <link href="http://www.poghub.cf/2020/10/11/mind/designmode/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.poghub.cf/2020/10/11/mind/designmode/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2023-03-26T05:14:15.479Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;策略模式&quot;&gt;&lt;a href=&quot;#策略模式&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="designmode" scheme="http://www.poghub.cf/tags/designmode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10小技巧</title>
+    <link href="http://www.poghub.cf/2020/10/01/system/win10/win10%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <id>http://www.poghub.cf/2020/10/01/system/win10/win10%E5%B0%8F%E6%8A%80%E5%B7%A7/</id>
+    <published>2020-09-30T16:00:00.000Z</published>
+    <updated>2022-11-21T13:04:59.199Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;玩了很多年win10，总结下各种小技巧，算是强迫症们的福音吧&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;PC图片里老是有保存的图片和本地照片文件夹？删了还有？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;win+s搜powershell，右键管理员</summary>
+        
+      
+    
+    
+    
+    
+    <category term="win10" scheme="http://www.poghub.cf/tags/win10/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>butterfly特性</title>
+    <link href="http://www.poghub.cf/2020/09/11/theme/butterfly/butterfly%E7%89%B9%E6%80%A7/"/>
+    <id>http://www.poghub.cf/2020/09/11/theme/butterfly/butterfly%E7%89%B9%E6%80%A7/</id>
+    <published>2020-09-10T16:00:00.000Z</published>
+    <updated>2023-04-12T06:39:15.803Z</updated>
+    
+    
+    <summary type="html">这是butterfly主题特性文章的摘要描述即测试front-matter的description</summary>
+    
+    
+    
+    
+    <category term="butterfly" scheme="http://www.poghub.cf/tags/butterfly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JVM内存分配机制</title>
+    <link href="http://www.poghub.cf/2020/08/09/backend/jvm/JVM%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E6%9C%BA%E5%88%B6/"/>
+    <id>http://www.poghub.cf/2020/08/09/backend/jvm/JVM%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E6%9C%BA%E5%88%B6/</id>
+    <published>2020-08-08T16:00:00.000Z</published>
+    <updated>2022-09-28T05:11:34.525Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;对象创建流程&quot;&gt;&lt;a href=&quot;#对象创建流程&quot; class=&quot;headerlink&quot; title=&quot;对象创建流程&quot;&gt;&lt;/a&gt;对象创建流程&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="jvm" scheme="http://www.poghub.cf/tags/jvm/"/>
+    
+  </entry>
+  
+</feed>
