@@ -1,0 +1,22 @@
+:root {
+  --vp-layout-max-width: 1900px;
+}
+
+:root,
+.dark {
+  --vp-c-indigo-1: var(--vp-c-green-1);
+  --vp-c-indigo-2: var(--vp-c-green-2);
+  --vp-c-indigo-3: var(--vp-c-green-3);
+  --vp-c-indigo-soft: var(--vp-c-green-soft);
+}
+
+.content-container {
+  max-width: 1188px !important;
+}
+
+
+th,
+td,
+body {
+  font-size: 18px !important;
+}
