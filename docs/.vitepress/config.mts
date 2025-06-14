@@ -2,32 +2,29 @@ import { defineConfig } from 'vitepress'
 import { generateSidebar } from 'vitepress-sidebar'
 
 export default defineConfig({
+  title: 'PogHub',
+  lang: 'zh',
+  description: '知识库',
   cleanUrls: true,
   lastUpdated: true,
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
-  markdown: {
-    lineNumbers: true,
-  },
   locales: {
     root: {
-      title: 'PogHub',
-      lang: 'zh-CN',
-      label: '简体中文',
-      description: '知识库',
+      label: '中文',
       themeConfig: {
         docFooter: {
-          prev: '上一页',
-          next: '下一页',
+          prev: '上页',
+          next: '下页',
         },
         lastUpdated: {
           text: '最后更新于',
         },
         langMenuLabel: '多语言',
-        returnToTopLabel: '回到顶部',
-        sidebarMenuLabel: '菜单',
+        returnToTopLabel: '回顶',
+        sidebarMenuLabel: '文库',
         darkModeSwitchLabel: '主题',
-        lightModeSwitchTitle: '切换到浅色模式',
-        darkModeSwitchTitle: '切换到深色模式',
+        lightModeSwitchTitle: '切换浅色',
+        darkModeSwitchTitle: '切换深色',
       },
     },
   },
@@ -35,7 +32,7 @@ export default defineConfig({
     logo: '/logo.png',
     outline: {
       level: 'deep', // 等价于[2, 6]
-      label: '页面导航',
+      label: '大纲',
     },
     search: {
       provider: 'local',
@@ -50,10 +47,30 @@ export default defineConfig({
             resetButtonTitle: '清除查询条件',
             displayDetails: '显示详细列表',
             footer: {
-              selectText: '选择',
               navigateText: '切换',
+              selectText: '选择',
               closeText: '关闭',
             },
+          },
+        },
+        miniSearch: {
+          options: {
+            tokenize: (term) => {
+              if (typeof term === 'string') term = term.toLowerCase()
+              const segmenter =
+                Intl.Segmenter &&
+                new Intl.Segmenter('zh', { granularity: 'word' })
+              if (!segmenter) return [term]
+              const tokens = []
+              for (const seg of segmenter.segment(term)) {
+                // @ts-ignore
+                tokens.push(seg.segment)
+              }
+              return tokens
+            },
+          },
+          searchOptions: {
+            combineWith: 'AND',
           },
         },
       },

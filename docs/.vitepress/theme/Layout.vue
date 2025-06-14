@@ -2,6 +2,7 @@
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
+import ToTop from './ToTop.vue'
 
 const { isDark } = useData()
 
@@ -40,7 +41,11 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 </script>
 
 <template>
-  <DefaultTheme.Layout />
+  <DefaultTheme.Layout>
+    <template #layout-bottom>
+      <ToTop />
+    </template>
+  </DefaultTheme.Layout>
 </template>
 
 <style>

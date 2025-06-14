@@ -1,5 +1,7 @@
 :root {
   --vp-layout-max-width: 1900px;
+  --vp-code-font-size: 1em;
+  --vp-custom-block-font-size: 18px;
 }
 
 :root,
@@ -13,7 +15,6 @@
 .content-container {
   max-width: 1188px !important;
 }
-
 
 th,
 td,
